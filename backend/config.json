@@ -1,0 +1,11 @@
+{
+  "databaseURL": "mongodb+srv://pifadmin:pifadmin2019@pifcluster-xh3dx.mongodb.net/test?retryWrites=true",
+  "port": 8080,
+  "mongooseConfig": {
+    "autoIndex": false,
+    "useNewUrlParser": true,
+    "auto_reconnect" :true,
+    "reconnectTries": 10
+  },
+  "sessionSecret": "secretText"
+}
