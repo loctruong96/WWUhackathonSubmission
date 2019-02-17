@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="pl-5 pr-5">Featured Cards</h1>
+        <h1 class="pl-5 pr-5 text-xs-center">Featured Cards</h1>
         <FeaturedCarousel></FeaturedCarousel>
         <HighestStats></HighestStats>
     </div>
@@ -14,6 +14,7 @@
         components: {HighestStats, FeaturedCarousel},
         data () {
             return {
+                stats_cards: [],
                 items: [
                     {src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'},
                     {src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'},
@@ -22,7 +23,25 @@
                 ]
 
             }
-        }
+        },
+        beforeMount() {
+            this.getStats();
+        },
+        methods: {
+            getStats() {
+                let self = this;
+                axios.get(this.$searchAPI, {
+                    params: {
+                        stat: true
+                    }
+                }).then(function (response) {
+                    console.log(response);
+                    self.stats_cards = response.data;
+                }).catch(function (error) {
+                    console.log(error)
+                })
+            }
+        },
     }
 </script>
 

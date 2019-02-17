@@ -4,6 +4,7 @@ import Home from '@/components/pages/Home'
 import Statistica from '@/components/pages/Statistica'
 import TellStory from '@/components/pages/TellStory'
 import ViewCard from '@/components/pages/ViewCard'
+import FindCard from '@/components/pages/FindCard'
 
 Vue.use(Router);
 
@@ -15,5 +16,6 @@ export default new Router({
         {path: '/tellstory', name: 'tellstory', component: TellStory},
         {path: '/statistica', name: 'statistic', component: Statistica},
         {path: '/card/:cardname', name: 'viewcard', component: ViewCard},
+        {path: '/findcard', name: 'findcard', component: FindCard},
     ]
 })
